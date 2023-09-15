@@ -1,4 +1,0 @@
-{
-  "*.+(js|ts|tsx)": ["npm run lint"],
-  "**/*.+(js|json|ts|tsx)": ["prettier --write", "git add"]
-}

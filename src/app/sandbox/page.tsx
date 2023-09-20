@@ -26,17 +26,22 @@ export default function Sandbox() {
             clear standards, that can be assembled together to build any number
             of applications. Design systems aid in digital product design and
             development of products such as applications or websites. They may
-            contain, but are not limited to, pattern libraries, design
-            languages, style guides, coded components, brand languages, and
-            documentation.
+            contain, but are not limited to,{' '}
+            <span className='underline'>
+              pattern libraries, design languages, style guides, coded
+              components, brand languages, and documentation
+            </span>
+            .
           </p>
         </div>
 
         <div className={s.text}>
           <h2>Why do we need a design system?</h2>
           <p className='paragraph'>
-            Let us have a quick look over the most important takeaways of design
-            systems.
+            Let us have a quick look over the most important takeaways of{' '}
+            <span className='highlight'>design systems</span> and learn why
+            having a great design system is{' '}
+            <span className='bold'>crucial</span> to serious applications.
           </p>
 
           <ul className='margin-top-medium'>

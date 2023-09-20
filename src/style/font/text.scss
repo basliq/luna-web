@@ -4,7 +4,7 @@ h1 {
 }
 
 .subtitle-h1 {
-  color: var(--color-text-subtitle);
+  color: var(--color-text-muted);
   font-size: var(--font-size-9);
   line-height: var(--line-height-2);
   padding-block-start: var(--size-6);
@@ -16,7 +16,7 @@ h2 {
 }
 
 .subtitle-h2 {
-  color: var(--color-text-subtitle);
+  color: var(--color-text-muted);
   font-size: var(--font-size-7);
   line-height: var(--line-height-3);
   padding-block-start: var(--size-3);
@@ -28,7 +28,7 @@ h3 {
 }
 
 .subtitle-h3 {
-  color: var(--color-text-subtitle);
+  color: var(--color-text-muted);
   font-size: var(--font-size-6);
   line-height: var(--line-height-3);
   padding-block-start: var(--size-2);
@@ -41,4 +41,26 @@ p {
 .paragraph {
   padding-block-start: var(--font-size-6);
   line-height: var(--line-height-5);
+}
+
+.underline {
+  text-decoration: underline var(--color-underline);
+  text-decoration-thickness: var(--size-1);
+  text-underline-offset: var(--size-1);
+}
+
+.highlight {
+  display: inline-block;
+  background-color: var(--color-highlight-background);
+  color: var(--color-highlight-text);
+  padding-inline: var(--size-2);
+  padding-block: var(--size-1);
+}
+
+.bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.mute {
+  color: var(--color-text-muted);
 }

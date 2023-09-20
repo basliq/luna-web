@@ -34,16 +34,20 @@ export default function Sandbox() {
 
         <div className={s.text}>
           <h2>Why do we need a design system?</h2>
+          <p className='paragraph'>
+            Let us have a quick look over the most important takeaways of design
+            systems.
+          </p>
 
-          <ul>
+          <ul className='margin-top-medium'>
             <li>
-              <h3>We can see every major component in one look.</h3>
+              <h3>See every major component in one look</h3>
             </li>
             <li>
-              <h3>We can create new themes easily.</h3>
+              <h3>Create new themes easily</h3>
             </li>
             <li>
-              <h3>We can test things quickly.</h3>
+              <h3>Test things quickly</h3>
             </li>
           </ul>
         </div>

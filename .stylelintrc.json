@@ -4,6 +4,9 @@
     "stylelint-config-prettier-scss"
   ],
   "rules": {
-    "selector-class-pattern": null
+    "selector-class-pattern": null,
+    "color-named": "never",
+    "color-no-hex": true,
+    "function-disallowed-list": ["rgb", "hwb", "lch"]
   }
 }

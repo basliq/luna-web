@@ -1,7 +1,10 @@
+coverage
 node_modules
 .next
 .husky
-coverage
 .prettierignore
 .stylelintignore
 .eslintignore
+.gitignore
+**/.gitkeep
+src/app/favicon.ico

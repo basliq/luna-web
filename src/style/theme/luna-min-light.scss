@@ -1,0 +1,38 @@
+// This is the default theme so we also put the variables in the
+// :root to guarantee that our application is going to display
+// properly if something goes wrong.
+:root,
+[data-theme='luna-min-light'] {
+  --color-bg: var(--theme-neutral-50);
+  --color-container-on-bg: var(--theme-neutral-100);
+  --color-primary-container: var(--theme-primary-800);
+  --color-primary-container-dim: var(--theme-primary-950);
+  --color-text: var(--theme-neutral-800);
+  --color-text-muted: var(--theme-neutral-500);
+  --color-text-primary: var(--theme-primary-800);
+  --color-text-on-primary: var(--theme-neutral-100);
+  --color-selection-text: var(--theme-primary-900);
+  --color-selection-bg: var(--theme-primary-200);
+  --color-scrollbar-thumb-hover: var(--theme-neutral-600);
+  --color-scrollbar-thumb: var(--theme-neutral-500);
+  --color-scrollbar-track: var(--theme-neutral-200);
+  --color-bullet-point: var(--theme-primary-600);
+  --color-highlight-background: var(--theme-primary-600);
+  --color-highlight-text: var(--theme-neutral-50);
+  --color-underline: var(--theme-primary-600);
+}
+
+:root,
+:root[data-theme='luna-min-light'] {
+  --theme-primary-50: var(--color-violet-50);
+  --theme-primary-100: var(--color-violet-100);
+  --theme-primary-200: var(--color-violet-200);
+  --theme-primary-300: var(--color-violet-300);
+  --theme-primary-400: var(--color-violet-400);
+  --theme-primary-500: var(--color-violet-500);
+  --theme-primary-600: var(--color-violet-600);
+  --theme-primary-700: var(--color-violet-700);
+  --theme-primary-800: var(--color-violet-800);
+  --theme-primary-900: var(--color-violet-900);
+  --theme-primary-950: var(--color-violet-950);
+}

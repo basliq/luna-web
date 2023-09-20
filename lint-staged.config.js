@@ -7,9 +7,10 @@ const eslintCommand = filenames =>
     .join(' --file ')}`
 
 const formatCommand = 'npm run format'
-const stylelintCommand = 'stylelint --allow-empty-input "**/*.scss"'
+const lintStyleCommand = 'npm run lint-style'
+
 module.exports = {
   '*.{js,ts,tsx}': [formatCommand, eslintCommand],
-  '*.scss': [formatCommand, stylelintCommand],
+  '*.scss': [formatCommand, lintStyleCommand],
   '!*.{js,jsx,ts,tsx,css,scss}': [formatCommand],
 }

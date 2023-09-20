@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint && stylelint --allow-empty-input \"**/*.scss\"",
+    "check-lint-style": "npx stylelint \"**/*.scss\"",
+    "lint-style": "npx stylelint \"**/*.scss\" --fix",
     "prettier": "prettier \"**/*.+(scss|js|json|ts|tsx)\"",
     "format": "npm run prettier -- --write",
     "check-format": "npm run prettier -- --list-different",

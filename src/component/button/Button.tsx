@@ -1,5 +1,6 @@
 import s from './button.module.scss'
 import Icon, {IconTypes} from '../../icon/Icon.tsx'
+import {Spinner} from '@/component/spinner/Spinner.tsx'
 
 type ButtonSize = 'small' | 'medium' | 'large'
 type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'danger' | 'special'
@@ -34,6 +35,7 @@ export const Button = ({
       // TODO - add spinner for pending status
       return (
         <>
+          <Spinner size={size} />
           <p>{pendingText}</p>
         </>
       )

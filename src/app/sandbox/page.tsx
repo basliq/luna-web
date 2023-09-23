@@ -126,6 +126,15 @@ export default function Sandbox() {
           <Button size='large' type='danger' text='wabadub lub' />
           <Button size='large' type='danger' icon='login' text='wabadub lub' />
         </div>
+
+        <div>
+          <Button status='disabled' size='small' text='wabadub lub' />
+          <Button status='pending' size='small' text='wabadub lub' />
+          <Button status='disabled' text='wabadub lub' />
+          <Button status='pending' text='wabadub lub' />
+          <Button status='disabled' size='large' text='wabadub lub' />
+          <Button status='pending' size='large' text='wabadub lub' />
+        </div>
       </section>
     </div>
   )

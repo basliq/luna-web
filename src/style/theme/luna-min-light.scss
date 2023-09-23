@@ -36,8 +36,10 @@
   --color-btn-secondary-text: var(--theme-primary-900);
   --color-btn-tertiary-bg: transparent;
   --color-btn-tertiary-text: var(--color-text);
-  --color-btn-danger-bg: var(--theme-danger-200);
+  --color-btn-danger-bg: var(--theme-danger-100);
   --color-btn-danger-text: var(--theme-danger-900);
+  --color-btn-disabled-bg: var(--color-neutral-300);
+  --color-btn-disabled-text: var(--color-neutral-500);
 }
 
 :root,

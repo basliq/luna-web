@@ -1,3 +1,15 @@
+.button.primary,
+.button.danger {
+  --blending-mode: overlay;
+  --blending-opacity: 0.2;
+}
+
+.button.secondary,
+.button.tertiary {
+  --blending-mode: darken;
+  --blending-opacity: 0.05;
+}
+
 .button {
   background-color: transparent;
   outline: none;
@@ -24,9 +36,10 @@
     position: absolute;
     z-index: 1;
     inset: 0;
-    background-color: hsl(0deg 0% 0%);
     opacity: 0;
+    background-color: var(--color-btn-overlay);
     transition: opacity var(--transition-short) ease-in;
+    mix-blend-mode: var(--blending-mode);
   }
 
   &:hover:not(:disabled) {
@@ -34,7 +47,7 @@
   }
 
   &:hover::before {
-    opacity: 0.07;
+    opacity: var(--blending-opacity);
   }
 }
 

@@ -1,4 +1,5 @@
 import s from './styles.module.scss'
+import {Button} from '@/component/button/Button.tsx'
 
 export default function Sandbox() {
   return (
@@ -57,7 +58,75 @@ export default function Sandbox() {
           </ul>
         </div>
       </section>
-      <section></section>
+      <section className={s.buttons}>
+        <div>
+          <Button size='small' icon='login' />
+          <Button size='small' text='wabadub lub' />
+          <Button size='small' icon='login' text='wabadub lub' />
+          <Button icon='login' />
+          <Button text='wabadub lub' />
+          <Button icon='login' text='wabadub lub' />
+          <Button size='large' icon='login' />
+          <Button size='large' text='wabadub lub' />
+          <Button size='large' icon='login' text='wabadub lub' />
+        </div>
+
+        <div>
+          <Button size='small' type='secondary' icon='login' />
+          <Button size='small' type='secondary' text='wabadub lub' />
+          <Button
+            size='small'
+            type='secondary'
+            icon='login'
+            text='wabadub lub'
+          />
+          <Button type='secondary' icon='login' />
+          <Button type='secondary' text='wabadub lub' />
+          <Button type='secondary' icon='login' text='wabadub lub' />
+          <Button size='large' type='secondary' icon='login' />
+          <Button size='large' type='secondary' text='wabadub lub' />
+          <Button
+            size='large'
+            type='secondary'
+            icon='login'
+            text='wabadub lub'
+          />
+        </div>
+
+        <div>
+          <Button size='small' type='tertiary' icon='login' />
+          <Button size='small' type='tertiary' text='wabadub lub' />
+          <Button
+            size='small'
+            type='tertiary'
+            icon='login'
+            text='wabadub lub'
+          />
+          <Button type='tertiary' icon='login' />
+          <Button type='tertiary' text='wabadub lub' />
+          <Button type='tertiary' icon='login' text='wabadub lub' />
+          <Button size='large' type='tertiary' icon='login' />
+          <Button size='large' type='tertiary' text='wabadub lub' />
+          <Button
+            size='large'
+            type='tertiary'
+            icon='login'
+            text='wabadub lub'
+          />
+        </div>
+
+        <div>
+          <Button size='small' type='danger' icon='login' />
+          <Button size='small' type='danger' text='wabadub lub' />
+          <Button size='small' type='danger' icon='login' text='wabadub lub' />
+          <Button type='danger' icon='login' />
+          <Button type='danger' text='wabadub lub' />
+          <Button type='danger' icon='login' text='wabadub lub' />
+          <Button size='large' type='danger' icon='login' />
+          <Button size='large' type='danger' text='wabadub lub' />
+          <Button size='large' type='danger' icon='login' text='wabadub lub' />
+        </div>
+      </section>
     </div>
   )
 }

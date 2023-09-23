@@ -19,7 +19,11 @@ export const Button = ({
   text,
 }: ButtonProps) => {
   return (
-    <button className={`${s[size]} ${s[type]} ${text ? '' : s.iconOnly}`}>
+    <button
+      className={`${s.button} ${s[size]} ${s[type]} ${
+        text ? null : s.iconOnly
+      }`}
+    >
       {icon && <Icon size={size} type={icon} />}
       {text && <p>{text}</p>}
     </button>

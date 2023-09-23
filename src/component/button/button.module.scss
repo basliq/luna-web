@@ -1,3 +1,86 @@
-button {
-  //  TODO - add styles
+.button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: var(--radius-very-small);
+  overflow: clip;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-3);
+
+  p,
+  svg {
+    position: relative;
+    z-index: 5;
+  }
+
+  p {
+    white-space: nowrap;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    background-color: hsl(0deg 0% 0%);
+    opacity: 0;
+    transition: opacity var(--transition-short) ease-in;
+  }
+
+  &:hover:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &:hover::before {
+    opacity: 0.07;
+  }
+}
+
+.primary {
+  background-color: var(--color-btn-primary-bg);
+  color: var(--color-btn-primary-text);
+}
+
+.secondary {
+  background-color: var(--color-btn-secondary-bg);
+  color: var(--color-btn-secondary-text);
+}
+
+.tertiary {
+  background-color: var(--color-btn-tertiary-bg);
+  color: var(--color-btn-tertiary-text);
+}
+
+.danger {
+  background-color: var(--color-btn-danger-bg);
+  color: var(--color-btn-danger-text);
+}
+
+.small {
+  block-size: var(--size-7);
+  padding: var(--size-2) var(--size-3);
+
+  & p {
+    font-size: var(--font-size-4);
+  }
+}
+
+.medium {
+  block-size: var(--size-8);
+  padding: var(--size-3) var(--size-4);
+
+  & p {
+    font-size: var(--font-size-5);
+  }
+}
+
+.large {
+  block-size: var(--size-9);
+  padding: var(--size-4) var(--size-5);
+
+  & p {
+    font-size: var(--font-size-6);
+  }
 }

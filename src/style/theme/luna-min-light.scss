@@ -3,23 +3,43 @@
 // properly if something goes wrong.
 :root,
 [data-theme='luna-min-light'] {
+  // general color
   --color-bg: var(--theme-neutral-50);
   --color-container-on-bg: var(--theme-neutral-100);
   --color-primary-container: var(--theme-primary-800);
   --color-primary-container-dim: var(--theme-primary-950);
+
+  // text color
   --color-text: var(--theme-neutral-800);
   --color-text-muted: var(--theme-neutral-500);
-  --color-text-primary: var(--theme-primary-800);
-  --color-text-on-primary: var(--theme-neutral-100);
-  --color-selection-text: var(--theme-primary-900);
-  --color-selection-bg: var(--theme-primary-200);
-  --color-scrollbar-thumb-hover: var(--theme-neutral-600);
-  --color-scrollbar-thumb: var(--theme-neutral-500);
-  --color-scrollbar-track: var(--theme-neutral-200);
-  --color-bullet-point: var(--theme-primary-600);
   --color-highlight-background: var(--theme-primary-600);
   --color-highlight-text: var(--theme-neutral-50);
   --color-underline: var(--theme-primary-600);
+
+  // selection color
+  --color-selection-text: var(--theme-primary-900);
+  --color-selection-bg: var(--theme-primary-200);
+
+  // scrollbar color
+  --color-scrollbar-thumb-hover: var(--theme-neutral-600);
+  --color-scrollbar-thumb: var(--theme-neutral-500);
+  --color-scrollbar-track: var(--theme-neutral-200);
+
+  // list color
+  --color-bullet-point: var(--theme-primary-600);
+
+  // button color
+  --color-btn-overlay: hsl(0deg 0% 0%);
+  --color-btn-primary-bg: var(--theme-primary-500);
+  --color-btn-primary-text: var(--theme-primary-50);
+  --color-btn-secondary-bg: var(--theme-primary-100);
+  --color-btn-secondary-text: var(--theme-primary-900);
+  --color-btn-tertiary-bg: transparent;
+  --color-btn-tertiary-text: var(--color-text);
+  --color-btn-danger-bg: var(--theme-danger-100);
+  --color-btn-danger-text: var(--theme-danger-900);
+  --color-btn-disabled-bg: var(--color-neutral-300);
+  --color-btn-disabled-text: var(--color-neutral-500);
 }
 
 :root,

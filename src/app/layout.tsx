@@ -8,7 +8,7 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'Luna',
+  title: 'Luna | Manage Your Projects',
   description: "The world's simplest project management tool",
 }
 

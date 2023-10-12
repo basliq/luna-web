@@ -82,7 +82,7 @@
 
 .small {
   block-size: var(--size-7);
-  padding: var(--size-2) var(--size-3);
+  padding: var(--size-2) var(--size-5);
 
   & p {
     font-size: var(--font-size-4);
@@ -91,7 +91,7 @@
 
 .medium {
   block-size: var(--size-8);
-  padding: var(--size-3) var(--size-4);
+  padding: var(--size-3) var(--size-6);
 
   & p {
     font-size: var(--font-size-5);
@@ -100,7 +100,7 @@
 
 .large {
   block-size: var(--size-9);
-  padding: var(--size-4) var(--size-5);
+  padding: var(--size-4) var(--size-7);
 
   & p {
     font-size: var(--font-size-6);

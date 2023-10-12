@@ -7,10 +7,17 @@
   border-block-end: var(--divider-medium);
 
   .logo {
-    inline-size: 5rem;
+    display: flex;
+    gap: var(--size-6);
+    align-items: center;
 
     img {
-      inline-size: 100%;
+      inline-size: 5rem;
+    }
+
+    p {
+      font-size: var(--font-size-7);
+      font-weight: var(--font-weight-bold);
     }
   }
 

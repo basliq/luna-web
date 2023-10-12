@@ -1,6 +1,4 @@
 import '@/style/global.scss'
-import '@mantine/core/styles.css'
-import {MantineProvider, ColorSchemeScript} from '@mantine/core'
 import {Montserrat} from 'next/font/google'
 import type {Metadata} from 'next'
 
@@ -10,8 +8,8 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'Luna',
-  description: "The world's simplest project management tool",
+  title: 'Luna App',
+  description: "The World's simplest project management tool",
 }
 
 type RootProps = {
@@ -21,12 +19,7 @@ type RootProps = {
 export default function RootLayout({children}: RootProps) {
   return (
     <html lang='en' className={montserrat.className}>
-      <head>
-        <ColorSchemeScript />
-      </head>
-      <body>
-        <MantineProvider>{children}</MantineProvider>
-      </body>
+      <body>{children}</body>
     </html>
   )
 }

@@ -1,0 +1,24 @@
+:root,
+[data-theme='luna-default'] {
+  // text color
+  --color-text: var(--theme-neutral-800);
+  --color-text-muted: var(--theme-neutral-500);
+  --color-highlight-background: var(--theme-primary-600);
+  --color-highlight-text: var(--theme-neutral-50);
+  --color-underline: var(--theme-primary-600);
+}
+
+:root,
+:root[data-theme='luna-default'] {
+  --theme-primary-50: var(--color-violet-50);
+  --theme-primary-100: var(--color-violet-100);
+  --theme-primary-200: var(--color-violet-200);
+  --theme-primary-300: var(--color-violet-300);
+  --theme-primary-400: var(--color-violet-400);
+  --theme-primary-500: var(--color-violet-500);
+  --theme-primary-600: var(--color-violet-600);
+  --theme-primary-700: var(--color-violet-700);
+  --theme-primary-800: var(--color-violet-800);
+  --theme-primary-900: var(--color-violet-900);
+  --theme-primary-950: var(--color-violet-950);
+}

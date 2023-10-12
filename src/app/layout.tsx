@@ -1,4 +1,6 @@
 import '@/style/global.scss'
+import '@mantine/core/styles.css'
+import {MantineProvider, ColorSchemeScript} from '@mantine/core'
 import {Montserrat} from 'next/font/google'
 import type {Metadata} from 'next'
 
@@ -19,7 +21,12 @@ type RootProps = {
 export default function RootLayout({children}: RootProps) {
   return (
     <html lang='en' className={montserrat.className}>
-      <body>{children}</body>
+      <head>
+        <ColorSchemeScript />
+      </head>
+      <body>
+        <MantineProvider>{children}</MantineProvider>
+      </body>
     </html>
   )
 }

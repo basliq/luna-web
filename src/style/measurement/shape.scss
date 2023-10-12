@@ -5,4 +5,9 @@
   --radius-large: 2rem;
   --radius-very-large: 2.5rem;
   --radius-circle: 50%;
+  --border-stroke-thin: 1px;
+  --border-stroke-medium: 2px;
+  --border-stroke-thick: 3px;
+  --divider-medium: var(--color-border-divider) solid
+    var(--border-stroke-medium);
 }

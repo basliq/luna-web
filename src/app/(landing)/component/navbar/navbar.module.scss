@@ -1,0 +1,28 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  block-size: 8rem;
+  padding-inline: 8rem;
+  border-block-end: var(--divider-medium);
+
+  .logo {
+    inline-size: 5rem;
+
+    img {
+      inline-size: 100%;
+    }
+  }
+
+  .mainNav {
+    justify-self: center;
+    display: flex;
+    gap: var(--size-3);
+  }
+
+  .authNav {
+    justify-self: end;
+    display: flex;
+    gap: var(--size-3);
+  }
+}

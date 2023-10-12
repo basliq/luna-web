@@ -1,10 +1,10 @@
 import '@/style/global.scss'
-import {Montserrat} from 'next/font/google'
+import {Manrope} from 'next/font/google'
 import type {Metadata} from 'next'
 
-const montserrat = Montserrat({
+const manrope = Manrope({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['500', '700'],
 })
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ type RootProps = {
 
 export default function RootLayout({children}: RootProps) {
   return (
-    <html lang='en' className={montserrat.className}>
+    <html lang='en' className={manrope.className}>
       <body>{children}</body>
     </html>
   )

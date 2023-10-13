@@ -23,24 +23,13 @@ export const Navbar = () => {
         <Button text='Home' type='tertiary' />
         <Dropdown
           menuType='flyout'
-          target={
-            <Button
-              text='Features'
-              type='tertiary'
-              icon='chevronDown'
-              iconPosition='after-text'
-            />
-          }
+          position='blockEndCenter'
+          target={<Button text='Features' type='tertiary' icon='chevronDown' />}
         >
           <div>hi</div>
         </Dropdown>
         <Link href='#'>
-          <Button
-            text='Academy'
-            type='tertiary'
-            icon='arrowTopRight'
-            iconPosition='after-text'
-          />
+          <Button text='Academy' type='tertiary' icon='arrowTopRight' />
         </Link>
       </div>
       <div className={s.authNav}>

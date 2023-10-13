@@ -1,5 +1,12 @@
+@use '../../style/utility/relative-position';
+
 .root {
   position: relative;
+  z-index: 999;
+
+  --target-block-size: 0;
+  --target-inline-size: 0;
+  --offset: 0;
 }
 
 .offset {
@@ -23,18 +30,19 @@
   border: var(--divider-medium);
 }
 
+// Dropdown types
 .dropdown {
-  --offset: var(--size-5);
+  --offset: var(--size-2);
 
   inline-size: 24rem;
 
   .container {
-    padding: var(--size-4);
+    padding: var(--size-3);
   }
 }
 
 .flyout {
-  --offset: var(--size-6);
+  --offset: var(--size-4);
 
   inline-size: 48rem;
 

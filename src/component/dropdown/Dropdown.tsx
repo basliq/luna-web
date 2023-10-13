@@ -1,34 +1,36 @@
 'use client'
 
+import {RelativePositionType} from '@/type/relative-position'
 import s from './dropdown.module.scss'
 import {useState, useEffect, useRef} from 'react'
 
-// TODO - add support for hover triggers
-
-type OpenOnType = 'click' | 'hover'
-type MenuType = 'dropdown' | 'flyout' | 'context'
+type DropdownParentType =
+  | null
+  | ((value: boolean | ((prevState: boolean) => void)) => void)
 
 type DropdownChildren = {
   target: React.ReactNode
   children: React.ReactNode
-  menuType?: MenuType
+  menuType?: 'dropdown' | 'flyout' | 'context'
+  position?: RelativePositionType
   initialState?: 'open' | 'close'
-  openOn?: OpenOnType
-  parentDropdownStateFunction?:
-    | null
-    | ((value: boolean | ((prevState: boolean) => void)) => void)
+  // TODO - add support for hover triggers
+  openOn?: 'click' | 'hover'
+  dropdownParentStateFunction?: DropdownParentType
 }
 
 export const Dropdown = ({
   target,
   children,
   menuType = 'dropdown',
+  position = 'blockEndStart',
   initialState = 'close',
   openOn = 'click',
-  parentDropdownStateFunction = null,
+  dropdownParentStateFunction = null,
 }: DropdownChildren) => {
   // states and refs
   const [open, setOpen] = useState(initialState === 'open')
+  const targetContainerRef = useRef<HTMLDivElement>(null)
   const rootRef = useRef<HTMLDivElement>(null)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
@@ -52,10 +54,25 @@ export const Dropdown = ({
     }
   }, [])
 
+  useEffect(() => {
+    if (targetContainerRef.current !== null) {
+      const targetHeight = targetContainerRef.current.offsetHeight
+      const targetWidth = targetContainerRef.current.offsetWidth
+      rootRef.current?.style.setProperty(
+        '--target-block-size',
+        targetHeight.toString() + 'px',
+      )
+      rootRef.current?.style.setProperty(
+        '--target-inline-size',
+        targetWidth.toString() + 'px',
+      )
+    }
+  }, [])
+
   // handlers
   const handleClose = () => {
     setOpen(false)
-    if (parentDropdownStateFunction === null) return
+    if (dropdownParentStateFunction === null) return
   }
   const handleOpen = () => {
     setOpen(true)
@@ -69,10 +86,13 @@ export const Dropdown = ({
 
   return (
     <div className={s.root} ref={rootRef}>
-      <div onClick={handleClick}>{target}</div>
-
+      <div onClick={handleClick} ref={targetContainerRef} style={{}}>
+        {target}
+      </div>
       <div
-        className={`${s.offset} ${open ? s.show : ''} ${s[menuType]}`}
+        className={`${s.offset} ${open ? s.show : ''} ${s[menuType]} ${
+          s[position]
+        }`}
         ref={dropdownRef}
       >
         <div className={s.container}>{children}</div>

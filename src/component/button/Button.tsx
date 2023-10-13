@@ -23,7 +23,7 @@ export const Button = ({
   size = 'medium',
   type = 'primary',
   icon,
-  iconPosition = 'before-text',
+  iconPosition = 'after-text',
   text,
   status = 'static',
   pendingText = 'Connecting to Server',

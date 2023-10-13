@@ -20,8 +20,20 @@ export const Navbar = () => {
       </Link>
       <div className={s.mainNav}>
         <Button text='Home' type='tertiary' />
-        <Button text='Features' type='tertiary' />
-        <Button text='Academy' type='tertiary' />
+        <Button
+          text='Features'
+          type='tertiary'
+          icon='chevronDown'
+          iconPosition='after-text'
+        />
+        <Link href='#'>
+          <Button
+            text='Academy'
+            type='tertiary'
+            icon='arrowTopRight'
+            iconPosition='after-text'
+          />
+        </Link>
       </div>
       <div className={s.authNav}>
         <Button text='Log in' type='secondary' />

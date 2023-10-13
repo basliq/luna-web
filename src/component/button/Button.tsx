@@ -5,12 +5,14 @@ import {Spinner} from '@/component/spinner/Spinner.tsx'
 type ButtonSize = 'small' | 'medium' | 'large'
 type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'danger' | 'special'
 type ButtonStatus = 'static' | 'pending' | 'disabled'
+type IconPosition = 'before-text' | 'after-text'
 
 // TODO - enhance the type by making sure at least either icon or text is passed in as props
 type ButtonProps = {
   size?: ButtonSize
   type?: ButtonType
   icon?: IconTypes
+  iconPosition?: IconPosition
   text?: string
   status?: ButtonStatus
   pendingText?: string
@@ -21,6 +23,7 @@ export const Button = ({
   size = 'medium',
   type = 'primary',
   icon,
+  iconPosition = 'before-text',
   text,
   status = 'static',
   pendingText = 'Connecting to Server',
@@ -32,7 +35,6 @@ export const Button = ({
 
   const getContent = () => {
     if (status === 'pending') {
-      // TODO - add spinner for pending status
       return (
         <>
           <Spinner size={size} />
@@ -42,8 +44,13 @@ export const Button = ({
     } else {
       return (
         <>
-          {icon && <Icon size={size} type={icon} />}
+          {icon && iconPosition === 'before-text' && (
+            <Icon size={size} type={icon} />
+          )}
           {text && <p>{text}</p>}
+          {icon && iconPosition === 'after-text' && (
+            <Icon size={size} type={icon} />
+          )}
         </>
       )
     }

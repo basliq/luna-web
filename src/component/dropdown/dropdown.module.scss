@@ -1,3 +1,23 @@
 .root {
   position: relative;
 }
+
+.offset {
+  position: absolute;
+  background-color: transparent;
+  height: 200px;
+  width: 200px;
+  display: none;
+  place-items: center;
+  padding: var(--size-5);
+
+  &.show {
+    display: grid;
+  }
+}
+
+.container {
+  background-color: var(--color-container-on-bg);
+  block-size: 100%;
+  inline-size: 100%;
+}

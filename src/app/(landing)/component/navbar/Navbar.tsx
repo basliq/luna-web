@@ -3,6 +3,7 @@ import logoSVG from '../../../../../public/luna-logo-v2.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import {Button} from '@/component/button/Button'
+import {Dropdown} from '@/component/dropdown/Dropdown'
 
 export const Navbar = () => {
   return (
@@ -20,12 +21,18 @@ export const Navbar = () => {
       </Link>
       <div className={s.mainNav}>
         <Button text='Home' type='tertiary' />
-        <Button
-          text='Features'
-          type='tertiary'
-          icon='chevronDown'
-          iconPosition='after-text'
-        />
+        <Dropdown
+          target={
+            <Button
+              text='Features'
+              type='tertiary'
+              icon='chevronDown'
+              iconPosition='after-text'
+            />
+          }
+        >
+          <div>hi</div>
+        </Dropdown>
         <Link href='#'>
           <Button
             text='Academy'

@@ -1,7 +1,9 @@
 'use client'
 
 import s from './dropdown.module.scss'
-import {useState} from 'react'
+import {useState, useEffect, useRef} from 'react'
+
+// TODO - add support for hover triggers
 
 type OpenOnType = 'click' | 'hover'
 
@@ -10,7 +12,7 @@ type DropdownChildren = {
   children: React.ReactNode
   initialState?: 'open' | 'close'
   openOn?: OpenOnType
-  parentDropdownStateFunction:
+  parentDropdownStateFunction?:
     | null
     | ((value: boolean | ((prevState: boolean) => void)) => void)
 }
@@ -22,13 +24,36 @@ export const Dropdown = ({
   openOn = 'click',
   parentDropdownStateFunction = null,
 }: DropdownChildren) => {
+  // states and refs
   const [open, setOpen] = useState(initialState === 'open')
+  const rootRef = useRef<HTMLDivElement>(null)
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
+  // effects
+  useEffect(() => {
+    const handleClickOutside = ($e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        // @ts-expect-error: couldn't find the right type for this event.
+        !dropdownRef.current.contains($e.target) &&
+        rootRef.current &&
+        // @ts-expect-error: couldn't find the right type for this event.
+        !rootRef.current.contains($e.target)
+      ) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener('click', handleClickOutside, true)
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true)
+    }
+  }, [])
+
+  // handlers
   const handleClose = () => {
     setOpen(false)
     if (parentDropdownStateFunction === null) return
   }
-
   const handleOpen = () => {
     setOpen(true)
   }
@@ -39,26 +64,11 @@ export const Dropdown = ({
     if (!open) handleOpen()
   }
 
-  const handleMouseEnter = () => {
-    if (openOn === 'click') return
-    handleOpen()
-  }
-
-  const handleMouseLeave = () => {
-    if (openOn === 'click') return
-  }
-
   return (
-    <div className={s.root}>
-      <div
-        onClick={handleClick}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        {target}
-      </div>
+    <div className={s.root} ref={rootRef}>
+      <div onClick={handleClick}>{target}</div>
 
-      <div className={s.offset}>
+      <div className={`${s.offset} ${open ? s.show : ''}`} ref={dropdownRef}>
         <div className={s.container}>{children}</div>
       </div>
     </div>

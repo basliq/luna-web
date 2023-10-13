@@ -5,11 +5,9 @@
 .offset {
   position: absolute;
   background-color: transparent;
-  height: 200px;
-  width: 200px;
   display: none;
   place-items: center;
-  padding: var(--size-5);
+  padding: var(--offset);
 
   &.show {
     display: grid;
@@ -17,7 +15,40 @@
 }
 
 .container {
-  background-color: var(--color-container-on-bg);
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-close);
   block-size: 100%;
   inline-size: 100%;
+  border-radius: var(--radius-medium);
+  border: var(--divider-medium);
+}
+
+.dropdown {
+  --offset: var(--size-5);
+
+  inline-size: 24rem;
+
+  .container {
+    padding: var(--size-4);
+  }
+}
+
+.flyout {
+  --offset: var(--size-6);
+
+  inline-size: 48rem;
+
+  .container {
+    padding: var(--size-6);
+  }
+}
+
+.context {
+  --offset: 0;
+
+  inline-size: 18rem;
+
+  .container {
+    padding: (--size-3);
+  }
 }

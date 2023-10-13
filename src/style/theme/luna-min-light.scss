@@ -43,6 +43,18 @@
 
   // border color
   --color-border-divider: var(--color-neutral-200);
+
+  // shadow color
+  --color-shadow-close: color-mix(
+    in hsl,
+    var(--color-neutral-900) 10%,
+    transparent
+  );
+  --color-shadow-distant: color-mix(
+    in hsl,
+    var(--color-neutral-900) 5%,
+    transparent
+  );
 }
 
 :root,

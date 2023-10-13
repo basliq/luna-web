@@ -6,10 +6,12 @@ import {useState, useEffect, useRef} from 'react'
 // TODO - add support for hover triggers
 
 type OpenOnType = 'click' | 'hover'
+type MenuType = 'dropdown' | 'flyout' | 'context'
 
 type DropdownChildren = {
   target: React.ReactNode
   children: React.ReactNode
+  menuType?: MenuType
   initialState?: 'open' | 'close'
   openOn?: OpenOnType
   parentDropdownStateFunction?:
@@ -20,6 +22,7 @@ type DropdownChildren = {
 export const Dropdown = ({
   target,
   children,
+  menuType = 'dropdown',
   initialState = 'close',
   openOn = 'click',
   parentDropdownStateFunction = null,
@@ -68,7 +71,10 @@ export const Dropdown = ({
     <div className={s.root} ref={rootRef}>
       <div onClick={handleClick}>{target}</div>
 
-      <div className={`${s.offset} ${open ? s.show : ''}`} ref={dropdownRef}>
+      <div
+        className={`${s.offset} ${open ? s.show : ''} ${s[menuType]}`}
+        ref={dropdownRef}
+      >
         <div className={s.container}>{children}</div>
       </div>
     </div>

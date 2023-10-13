@@ -7,7 +7,9 @@
 @use './app/list';
 
 @use './color/tailwind';
-@use './color/deafult';
+@use './color/default';
+
+@use './elevation/shadows';
 
 @use './font/text';
 @use './font/typography';

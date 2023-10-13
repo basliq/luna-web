@@ -22,6 +22,7 @@ export const Navbar = () => {
       <div className={s.mainNav}>
         <Button text='Home' type='tertiary' />
         <Dropdown
+          menuType='flyout'
           target={
             <Button
               text='Features'

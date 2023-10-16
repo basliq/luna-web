@@ -4,6 +4,17 @@ import {RelativePositionType} from '@/type/relative-position'
 import s from './dropdown.module.scss'
 import {useState, useEffect, useRef} from 'react'
 
+// TODO:
+// add animations
+// add support for hover triggers
+// add support for automatic position change if there is no space
+// * nested menu:
+// add nested dropdowns
+// handle not closing the dropdown if clicked in a nested menu
+// * keyboard:
+// handle closing menu with Esc key
+// add keyboard support
+
 type DropdownParentType =
   | null
   | ((value: boolean | ((prevState: boolean) => void)) => void)
@@ -14,7 +25,6 @@ type DropdownChildren = {
   menuType?: 'dropdown' | 'flyout' | 'context'
   position?: RelativePositionType
   initialState?: 'open' | 'close'
-  // TODO - add support for hover triggers
   openOn?: 'click' | 'hover'
   dropdownParentStateFunction?: DropdownParentType
 }
@@ -69,11 +79,17 @@ export const Dropdown = ({
     }
   }, [])
 
+  const getPosition = (): RelativePositionType => {
+    // TODO - add automatic position change
+    return position
+  }
+
   // handlers
   const handleClose = () => {
     setOpen(false)
     if (dropdownParentStateFunction === null) return
   }
+
   const handleOpen = () => {
     setOpen(true)
   }
@@ -90,9 +106,11 @@ export const Dropdown = ({
         {target}
       </div>
       <div
-        className={`${s.offset} ${open ? s.show : ''} ${s[menuType]} ${
-          s[position]
-        }`}
+        className={`
+        ${s.offset}
+        ${open ? s.show : ''}
+        ${s[menuType]}
+        ${s[getPosition()]}`}
         ref={dropdownRef}
       >
         <div className={s.container}>{children}</div>

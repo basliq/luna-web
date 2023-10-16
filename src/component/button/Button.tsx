@@ -1,20 +1,22 @@
 import s from './button.module.scss'
-import Icon, {IconTypes} from '../../icon/Icon.tsx'
+import Icon, {Icons} from '../../icon/Icon.tsx'
 import {Spinner} from '@/component/spinner/Spinner.tsx'
 
-type ButtonSize = 'small' | 'medium' | 'large'
-type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'danger' | 'special'
-type ButtonStatus = 'static' | 'pending' | 'disabled'
-type IconPosition = 'before-text' | 'after-text'
+// TODO
+// enhance the type by making sure at least either icon or text is passed in as props
+// add focus related api: whether show focus ring or not and and add CSS for it
+// add popover to button element: I think 95% of usage for popover tooltip is for buttons
+// add image support for button
+// add justify settings for icons
+// add assistive voice over for buttons
 
-// TODO - enhance the type by making sure at least either icon or text is passed in as props
 type ButtonProps = {
-  size?: ButtonSize
-  type?: ButtonType
-  icon?: IconTypes
-  iconPosition?: IconPosition
+  size?: 'small' | 'medium' | 'large'
+  type?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'special'
+  icon?: Icons
+  iconPosition?: 'before-text' | 'after-text'
   text?: string
-  status?: ButtonStatus
+  status?: 'static' | 'pending' | 'disabled'
   pendingText?: string
   handleClick?: () => void
 }
@@ -55,11 +57,14 @@ export const Button = ({
       )
     }
   }
+
   return (
     <button
-      className={`${s.button} ${s[size]} ${s[type]} ${
-        status === 'pending' ? s.pending : null
-      }`}
+      className={`
+      ${s.button}
+      ${s[size]}
+      ${s[type]}
+      ${status === 'pending' ? s.pending : null}`}
       onClick={handleClick}
       disabled={status === 'disabled'}
     >

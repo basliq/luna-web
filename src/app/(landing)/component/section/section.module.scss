@@ -1,0 +1,7 @@
+.section {
+  --section-max-inline-size: 140rem;
+
+  max-inline-size: var(--section-max-inline-size);
+  margin-inline: auto;
+  padding: var(--size-6);
+}

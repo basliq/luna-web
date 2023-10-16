@@ -19,7 +19,7 @@ type DropdownParentType =
   | null
   | ((value: boolean | ((prevState: boolean) => void)) => void)
 
-type DropdownChildren = {
+type DropdownProps = {
   target: React.ReactNode
   children: React.ReactNode
   menuType?: 'dropdown' | 'flyout' | 'context'
@@ -37,7 +37,7 @@ export const Dropdown = ({
   initialState = 'close',
   openOn = 'click',
   dropdownParentStateFunction = null,
-}: DropdownChildren) => {
+}: DropdownProps) => {
   // states and refs
   const [open, setOpen] = useState(initialState === 'open')
   const targetContainerRef = useRef<HTMLDivElement>(null)

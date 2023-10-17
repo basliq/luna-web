@@ -6,21 +6,6 @@
   padding-inline: 8rem;
   border-block-end: var(--divider-medium);
 
-  .logo {
-    display: flex;
-    gap: var(--size-6);
-    align-items: center;
-
-    img {
-      inline-size: 5rem;
-    }
-
-    p {
-      font-size: var(--font-size-7);
-      font-weight: var(--font-weight-bold);
-    }
-  }
-
   .mainNav {
     justify-self: center;
     display: flex;

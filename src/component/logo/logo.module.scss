@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  gap: var(--size-3);
+  align-items: center;
+
+  img {
+    inline-size: 3rem;
+  }
+
+  p {
+    font-size: var(--font-size-6);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-brand-text);
+  }
+}

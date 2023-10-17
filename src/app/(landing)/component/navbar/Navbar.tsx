@@ -1,23 +1,14 @@
 import s from './navbar.module.scss'
-import logoSVG from '../../../../../public/luna-logo-v2.svg'
-import Image from 'next/image'
 import Link from 'next/link'
 import {Button} from '@/component/button/Button'
 import {Dropdown} from '@/component/dropdown/Dropdown'
+import {Logo} from '@/component/logo/Logo'
 
 export const Navbar = () => {
   return (
     <nav className={s.container}>
       <Link href='/'>
-        <figure className={s.logo}>
-          <Image
-            width={50}
-            height={50}
-            src={logoSVG as string}
-            alt='Luna Logo'
-          />
-          <p>Luna</p>
-        </figure>
+        <Logo />
       </Link>
       <div className={s.mainNav}>
         <Button text='Home' type='tertiary' />

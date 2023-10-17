@@ -8,7 +8,7 @@ export const Navbar = () => {
   return (
     <nav className={s.container}>
       <Link href='/'>
-        <Logo />
+        <Logo animated />
       </Link>
       <div className={s.mainNav}>
         <Button text='Home' type='tertiary' />

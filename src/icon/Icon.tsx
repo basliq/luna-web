@@ -4,24 +4,22 @@ import {IconMap} from './icon-map.tsx'
 // This project uses icons from Material Design.
 //
 // We are not using a cdn or local icon font because we won't be needing more than
-// 200 icons and downloading all those icons in a font won't do the end user and good.
+// 200 icons and downloading all those icons in a font won't do the end user any good.
 //
 // We get the individual icons we need from https://icones.js.org/collection/mdi and
 // extract the svg path and create a component out of them like the ones in ./svg
 // folder.
 
-export type IconTypes = keyof typeof IconMap
-type IconSizes = 'small' | 'medium' | 'large'
-type IconColors = 'text'
+export type Icons = keyof typeof IconMap
 
 type props = {
-  type: IconTypes
-  size?: IconSizes
-  color?: IconColors
+  type: Icons
+  size?: 'small' | 'medium' | 'large'
+  color?: 'text'
 }
 
 export default function Icon({type, size = 'medium', color = 'text'}: props) {
-  function getIconSVGPath(icon: IconTypes): React.ReactNode {
+  function getIconSVGPath(icon: Icons): React.ReactNode {
     return IconMap[icon]
   }
 

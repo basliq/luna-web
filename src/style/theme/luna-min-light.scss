@@ -5,9 +5,7 @@
 [data-theme='luna-min-light'] {
   // general color
   --color-bg: var(--theme-neutral-50);
-  --color-container-on-bg: var(--theme-neutral-100);
-  --color-primary-container: var(--theme-primary-800);
-  --color-primary-container-dim: var(--theme-primary-950);
+  --color-on-bg: var(--theme-neutral-100);
 
   // text color
   --color-text: var(--theme-neutral-800);
@@ -15,6 +13,7 @@
   --color-highlight-background: var(--theme-primary-600);
   --color-highlight-text: var(--theme-neutral-50);
   --color-underline: var(--theme-primary-600);
+  --color-brand-text: var(--theme-primary-600);
 
   // selection color
   --color-selection-text: var(--theme-primary-900);
@@ -38,21 +37,36 @@
   --color-btn-tertiary-text: var(--color-text);
   --color-btn-danger-bg: var(--theme-danger-100);
   --color-btn-danger-text: var(--theme-danger-900);
-  --color-btn-disabled-bg: var(--color-neutral-300);
-  --color-btn-disabled-text: var(--color-neutral-500);
+  --color-btn-disabled-bg: var(--theme-neutral-300);
+  --color-btn-disabled-text: var(--theme-neutral-500);
+
+  // border color
+  --color-border-divider: var(--theme-neutral-200);
+
+  // shadow color
+  --color-shadow-close: color-mix(
+    in hsl,
+    var(--theme-neutral-900) 10%,
+    transparent
+  );
+  --color-shadow-distant: color-mix(
+    in hsl,
+    var(--theme-neutral-900) 5%,
+    transparent
+  );
 }
 
 :root,
 :root[data-theme='luna-min-light'] {
-  --theme-primary-50: var(--color-violet-50);
-  --theme-primary-100: var(--color-violet-100);
-  --theme-primary-200: var(--color-violet-200);
-  --theme-primary-300: var(--color-violet-300);
-  --theme-primary-400: var(--color-violet-400);
-  --theme-primary-500: var(--color-violet-500);
-  --theme-primary-600: var(--color-violet-600);
-  --theme-primary-700: var(--color-violet-700);
-  --theme-primary-800: var(--color-violet-800);
-  --theme-primary-900: var(--color-violet-900);
-  --theme-primary-950: var(--color-violet-950);
+  --theme-primary-50: var(--raw-color-violet-50);
+  --theme-primary-100: var(--raw-color-violet-100);
+  --theme-primary-200: var(--raw-color-violet-200);
+  --theme-primary-300: var(--raw-color-violet-300);
+  --theme-primary-400: var(--raw-color-violet-400);
+  --theme-primary-500: var(--raw-color-violet-500);
+  --theme-primary-600: var(--raw-color-violet-600);
+  --theme-primary-700: var(--raw-color-violet-700);
+  --theme-primary-800: var(--raw-color-violet-800);
+  --theme-primary-900: var(--raw-color-violet-900);
+  --theme-primary-950: var(--raw-color-violet-950);
 }

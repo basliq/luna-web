@@ -1,8 +1,18 @@
 :root {
+  // border radius
   --radius-very-small: 0.5rem;
   --radius-small: 1rem;
   --radius-medium: 1.5rem;
   --radius-large: 2rem;
   --radius-very-large: 2.5rem;
   --radius-circle: 50%;
+
+  // border stroke
+  --border-stroke-thin: 1px;
+  --border-stroke-medium: 2px;
+  --border-stroke-thick: 3px;
+
+  // divider
+  --divider-medium: var(--color-border-divider) solid
+    var(--border-stroke-medium);
 }

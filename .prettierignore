@@ -1,12 +1,21 @@
-coverage
-node_modules
-**/*.md
-**/*.webp
+# directories
 .next
 .husky
+coverage
+node_modules
+
+# global extentions
+**/*.md
+**/*.webp
+**/.gitkeep
+
+# image files
+**/*.svg
+**/*.png
+src/app/favicon.ico
+
+# other ignore files
 .prettierignore
 .stylelintignore
 .eslintignore
 .gitignore
-**/.gitkeep
-src/app/favicon.ico

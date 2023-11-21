@@ -1,0 +1,63 @@
+.inlineStartStart {
+  inset-inline-end: calc(var(--target-inline-size));
+  inset-block-start: calc(-1 * var(--offset));
+}
+
+.inlineStartCenter {
+  inset-inline-end: calc(var(--target-inline-size));
+  inset-block-start: calc(var(--target-block-size) / 2);
+  transform: translateY(-50%);
+}
+
+.inlineStartEnd {
+  inset-inline-end: calc(var(--target-inline-size));
+  inset-block-end: calc(-1 * var(--offset));
+}
+
+.inlineEndStart {
+  inset-inline-start: calc(var(--target-inline-size));
+  inset-block-start: calc(-1 * var(--offset));
+}
+
+.inlineEndCenter {
+  inset-inline-start: calc(var(--target-inline-size));
+  inset-block-start: calc(var(--target-block-size) / 2);
+  transform: translateY(-50%);
+}
+
+.inlineEndEnd {
+  inset-inline-start: calc(var(--target-inline-size));
+  inset-block-end: calc(-1 * var(--offset));
+}
+
+.blockStartStart {
+  inset-block-end: calc(var(--target-block-size));
+  inset-inline-start: calc(-1 * var(--offset));
+}
+
+.blockStartCenter {
+  inset-block-end: calc(var(--target-block-size));
+  inset-inline-start: calc((var(--target-inline-size)) / 2);
+  transform: translateX(-50%);
+}
+
+.blockStartEnd {
+  inset-block-end: calc(var(--target-block-size));
+  inset-inline-end: calc(-1 * var(--offset));
+}
+
+.blockEndStart {
+  inset-block-start: calc(var(--target-block-size));
+  inset-inline-start: calc(-1 * var(--offset));
+}
+
+.blockEndCenter {
+  inset-block-start: calc(var(--target-block-size));
+  inset-inline-start: calc((var(--target-inline-size)) / 2);
+  transform: translateX(-50%);
+}
+
+.blockEndEnd {
+  inset-block-start: calc(var(--target-block-size));
+  inset-inline-end: calc(-1 * var(--offset));
+}

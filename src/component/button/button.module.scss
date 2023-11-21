@@ -3,11 +3,13 @@
 .button.danger {
   --blending-mode: overlay;
   --blending-opacity: 0.2;
+  --blending-active-opacity: 0.4;
 }
 
 .button.tertiary {
   --blending-mode: darken;
   --blending-opacity: 0.05;
+  --blending-active-opacity: 0.1;
 }
 
 .button {
@@ -21,6 +23,8 @@
   display: flex;
   align-items: center;
   gap: var(--size-3);
+  font-family: inherit;
+  transition: var(--transition-very-short);
 
   p,
   svg {
@@ -30,6 +34,7 @@
 
   p {
     white-space: nowrap;
+    font-weight: var(--font-weight-regular);
   }
 
   &::before {
@@ -45,6 +50,15 @@
 
   &:hover::before {
     opacity: var(--blending-opacity);
+  }
+
+  &:active {
+    transition: var(--transition-very-short);
+    transform: translateY(2px);
+  }
+
+  &:active::before {
+    opacity: var(--blending-active-opacity);
   }
 }
 
@@ -79,8 +93,8 @@
 }
 
 .small {
-  block-size: var(--size-7);
-  padding: var(--size-2) var(--size-3);
+  block-size: var(--size-6);
+  padding: var(--size-3) var(--size-4);
 
   & p {
     font-size: var(--font-size-4);
@@ -88,8 +102,8 @@
 }
 
 .medium {
-  block-size: var(--size-8);
-  padding: var(--size-3) var(--size-4);
+  block-size: var(--size-7);
+  padding: var(--size-4) var(--size-5);
 
   & p {
     font-size: var(--font-size-5);
@@ -97,8 +111,8 @@
 }
 
 .large {
-  block-size: var(--size-9);
-  padding: var(--size-4) var(--size-5);
+  block-size: var(--size-8);
+  padding: var(--size-5) var(--size-6);
 
   & p {
     font-size: var(--font-size-6);

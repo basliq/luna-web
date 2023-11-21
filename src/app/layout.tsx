@@ -4,11 +4,11 @@ import type {Metadata} from 'next'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['500', '700', '900'],
 })
 
 export const metadata: Metadata = {
-  title: 'Luna',
+  title: 'Luna | Manage Your Projects',
   description: "The world's simplest project management tool",
 }
 

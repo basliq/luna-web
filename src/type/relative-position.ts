@@ -1,0 +1,13 @@
+export type RelativePositionType =
+  | 'inlineStartStart'
+  | 'inlineStartCenter'
+  | 'inlineStartEnd'
+  | 'inlineEndStart'
+  | 'inlineEndCenter'
+  | 'inlineEndEnd'
+  | 'blockStartStart'
+  | 'blockStartCenter'
+  | 'blockStartEnd'
+  | 'blockEndStart'
+  | 'blockEndCenter'
+  | 'blockEndEnd'

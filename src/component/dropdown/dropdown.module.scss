@@ -1,0 +1,62 @@
+@use '../../style/utility/relative-position';
+
+.root {
+  position: relative;
+  z-index: 999;
+
+  --target-block-size: 0;
+  --target-inline-size: 0;
+  --offset: 0;
+}
+
+.offset {
+  position: absolute;
+  background-color: transparent;
+  display: none;
+  place-items: center;
+  padding: var(--offset);
+
+  &.show {
+    display: grid;
+  }
+}
+
+.container {
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-close);
+  block-size: 100%;
+  inline-size: 100%;
+  border-radius: var(--radius-medium);
+  border: var(--divider-medium);
+}
+
+// Dropdown types
+.dropdown {
+  --offset: var(--size-2);
+
+  inline-size: 24rem;
+
+  .container {
+    padding: var(--size-3);
+  }
+}
+
+.flyout {
+  --offset: var(--size-4);
+
+  inline-size: 48rem;
+
+  .container {
+    padding: var(--size-6);
+  }
+}
+
+.context {
+  --offset: 0;
+
+  inline-size: 18rem;
+
+  .container {
+    padding: (--size-3);
+  }
+}

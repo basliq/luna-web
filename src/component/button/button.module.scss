@@ -48,13 +48,18 @@
     mix-blend-mode: var(--blending-mode);
   }
 
-  &:hover::before {
-    opacity: var(--blending-opacity);
-  }
-
   &:active {
     transition: var(--transition-very-short);
     transform: translateY(2px);
+  }
+
+  &:focus-visible {
+    outline: var(--color-focus-outline) solid var(--border-stroke-medium);
+  }
+
+  &:hover::before,
+  &:focus-visible::before {
+    opacity: var(--blending-opacity);
   }
 
   &:active::before {

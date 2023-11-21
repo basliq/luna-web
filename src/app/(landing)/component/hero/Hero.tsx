@@ -1,5 +1,5 @@
-import {Button} from '@/component/button/Button'
 import s from './hero.module.scss'
+import {Button} from '@/component/button/Button.tsx'
 
 export const Hero = () => {
   return (
@@ -14,12 +14,7 @@ export const Hero = () => {
             span into many lines.
           </p>
         </div>
-        <Button
-          text='Try it out'
-          size='large'
-          icon='arrowRight'
-          iconPosition='after-text'
-        />
+        <Button text='Try it out' size='large' endIcon='arrowRight' />
       </div>
     </div>
   )

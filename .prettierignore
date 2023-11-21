@@ -4,7 +4,7 @@
 coverage
 node_modules
 
-# global extentions
+# global extensions
 **/*.md
 **/*.webp
 **/.gitkeep
@@ -19,3 +19,4 @@ src/app/favicon.ico
 .stylelintignore
 .eslintignore
 .gitignore
+.gitattributes

@@ -4,6 +4,7 @@ import s from './button.module.scss'
 import {Spinner} from '@/component/spinner/Spinner.tsx'
 import {Dropdown} from '@/component/dropdown/Dropdown.tsx'
 import {RelativePositionCenter} from '@/type/relative-position.ts'
+import {useApplicationSettings} from '@/storage/global-state/application-settings.ts'
 
 // TODO
 // animations
@@ -56,12 +57,10 @@ export const BaseButton = ({
   popoverText,
   popoverPosition = 'blockEndCenter',
 }: Props) => {
-  const settings = {
-    utter: false,
-  }
+  const {utteranceEnabled} = useApplicationSettings()
 
   const utter = () => {
-    if (!settings.utter) return
+    if (!utteranceEnabled) return
     const utterance = new SpeechSynthesisUtterance(text)
     speechSynthesis.speak(utterance)
   }

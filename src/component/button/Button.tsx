@@ -11,12 +11,13 @@ type Props = {
   size?: ButtonSizes
   type?: ButtonTypes
   text: string
-  startIcon?: Icons
-  endIcon?: Icons
   status?: ButtonStates
   pendingStateText?: string
   handleClick?: () => void
+  startIcon?: Icons
+  endIcon?: Icons
   justifyItems?: ButtonJustifyValues
+  popoverText?: string
 }
 
 export const Button = (props: Props) => {

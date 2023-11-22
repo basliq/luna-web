@@ -13,6 +13,7 @@ export const Navbar = () => {
       <div className={s.mainNav}>
         <Button text='Home' type='tertiary' />
         <Dropdown
+          openOn='hover'
           menuType='flyout'
           position='blockEndCenter'
           target={
@@ -26,7 +27,7 @@ export const Navbar = () => {
         </Link>
       </div>
       <div className={s.authNav}>
-        <Button text='Log in' type='secondary' />
+        <Button text='Log in' type='secondary' popoverText='this logs you in' />
         <Button text='Sign up' />
       </div>
     </nav>

@@ -1,12 +1,11 @@
+'use client'
+
 import s from './button.module.scss'
 import {Spinner} from '@/component/spinner/Spinner.tsx'
+import {Dropdown} from '@/component/dropdown/Dropdown.tsx'
 
 // TODO
-// enhance the type by making sure at least either icon or text is passed in as props
 // add popover to button element: I think 95% of usage for popover tooltip is for buttons
-// add image support for button
-// add justify settings for icons
-// add assistive voice over for buttons
 
 export type ButtonSizes = 'small' | 'medium' | 'large'
 export type ButtonTypes =
@@ -15,9 +14,15 @@ export type ButtonTypes =
   | 'tertiary'
   | 'danger'
   | 'special'
+
 export type ButtonStates = 'idle' | 'pending' | 'disabled'
 export type ButtonAnimations = 'none' | 'move-inline-end' | 'rotate-clock-wise'
-export type ButtonJustifyValues = 'center' | 'space-between' | 'space-end'
+export type ButtonJustifyValues =
+  | 'start'
+  | 'center'
+  | 'end'
+  | 'space-between'
+  | 'space-end'
 
 type Props = {
   size?: ButtonSizes
@@ -28,11 +33,11 @@ type Props = {
   disabledStateText?: string
   handleClick?: () => void
   startItem?: React.ReactNode
-  startItemColor?: string
   endItem?: React.ReactNode
-  endItemColor?: string // we need a color type
   animation?: ButtonAnimations
   justifyItems?: ButtonJustifyValues
+  popoverText?: string
+  popoverPosition?: string
 }
 
 export const BaseButton = ({
@@ -47,7 +52,17 @@ export const BaseButton = ({
   endItem,
   animation = 'none',
   justifyItems = 'center',
+  popoverText,
 }: Props) => {
+  const settings = {
+    utter: false,
+  }
+
+  const utter = () => {
+    if (!settings.utter) return
+    const utterance = new SpeechSynthesisUtterance(text)
+    speechSynthesis.speak(utterance)
+  }
   const getContent = () => {
     if (status === 'pending') {
       return (
@@ -69,7 +84,7 @@ export const BaseButton = ({
     }
   }
 
-  return (
+  const button = (
     <button
       className={`
         ${s.button}
@@ -80,9 +95,20 @@ export const BaseButton = ({
         ${s[justifyItems]}
       `}
       onClick={handleClick}
+      onMouseEnter={utter}
       disabled={status === 'disabled'}
     >
       {getContent()}
     </button>
+  )
+
+  // button with no popover
+  if (!popoverText) return button
+
+  // rendering a popover element when hovering on button
+  return (
+    <Dropdown openOn='hover' menuType='dropdown' target={button}>
+      <p>{popoverText}</p>
+    </Dropdown>
   )
 }

@@ -93,8 +93,36 @@
   cursor: not-allowed;
 }
 
-.button.pending {
+.pending {
   cursor: progress;
+}
+
+.start {
+  justify-content: start;
+}
+
+.center {
+  justify-content: center;
+}
+
+.end {
+  justify-content: end;
+}
+
+.space-start {
+  p {
+    margin-inline-start: auto;
+  }
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-end {
+  p {
+    margin-block-end: auto;
+  }
 }
 
 .small {

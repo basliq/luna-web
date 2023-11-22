@@ -6,7 +6,6 @@ import {useState, useEffect, useRef} from 'react'
 
 // TODO:
 // add animations
-// add support for hover triggers
 // add support for automatic position change if there is no space
 // * nested menu:
 // add nested dropdowns
@@ -95,14 +94,28 @@ export const Dropdown = ({
   }
 
   const handleClick = () => {
-    if (openOn === 'hover') return
     if (open) handleClose()
+    if (openOn === 'hover') return
     if (!open) handleOpen()
   }
 
+  const handleMouseEnter = () => {
+    if (openOn === 'click') return
+    handleOpen()
+  }
+
+  const handleMouseLeave = () => {
+    if (openOn === 'click') return
+    handleClose()
+  }
+
   return (
-    <div className={s.root} ref={rootRef}>
-      <div onClick={handleClick} ref={targetContainerRef} style={{}}>
+    <div className={s.root} ref={rootRef} onMouseLeave={handleMouseLeave}>
+      <div
+        onClick={handleClick}
+        onMouseEnter={handleMouseEnter}
+        ref={targetContainerRef}
+      >
         {target}
       </div>
       <div

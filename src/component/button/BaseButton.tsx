@@ -3,9 +3,10 @@
 import s from './button.module.scss'
 import {Spinner} from '@/component/spinner/Spinner.tsx'
 import {Dropdown} from '@/component/dropdown/Dropdown.tsx'
+import {RelativePositionCenter} from '@/type/relative-position.ts'
 
 // TODO
-// add popover to button element: I think 95% of usage for popover tooltip is for buttons
+// animations
 
 export type ButtonSizes = 'small' | 'medium' | 'large'
 export type ButtonTypes =
@@ -37,7 +38,7 @@ type Props = {
   animation?: ButtonAnimations
   justifyItems?: ButtonJustifyValues
   popoverText?: string
-  popoverPosition?: string
+  popoverPosition?: RelativePositionCenter
 }
 
 export const BaseButton = ({
@@ -53,6 +54,7 @@ export const BaseButton = ({
   animation = 'none',
   justifyItems = 'center',
   popoverText,
+  popoverPosition = 'blockEndCenter',
 }: Props) => {
   const settings = {
     utter: false,
@@ -107,8 +109,13 @@ export const BaseButton = ({
 
   // rendering a popover element when hovering on button
   return (
-    <Dropdown openOn='hover' menuType='dropdown' target={button}>
-      <p>{popoverText}</p>
+    <Dropdown
+      openOn='hover'
+      position={popoverPosition}
+      menuType='popover'
+      target={button}
+    >
+      <p className='p-smaller'>{popoverText}</p>
     </Dropdown>
   )
 }

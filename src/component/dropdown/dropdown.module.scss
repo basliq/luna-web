@@ -60,3 +60,31 @@
     padding: (--size-3);
   }
 }
+
+.popover {
+  --offset: var(--size-5);
+
+  inline-size: 24rem;
+  text-align: center;
+
+  .container {
+    padding: var(--size-2) var(--size-3);
+    background-color: var(--color-popover-bg);
+    color: var(--color-text-popover);
+    border-radius: var(--radius-small);
+    position: relative;
+    z-index: 999;
+  }
+
+  .container::before {
+    content: '';
+    inline-size: 1.2rem;
+    aspect-ratio: 1;
+    background-color: var(--color-popover-bg);
+    position: absolute;
+    inset: 0 50%;
+    z-index: 10;
+    clip-path: polygon(0% 0%, 0% 100%, 100% 0%);
+    transform: translate(-50%, -45%) rotate(45deg);
+  }
+}

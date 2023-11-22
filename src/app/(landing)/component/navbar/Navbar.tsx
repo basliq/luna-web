@@ -27,7 +27,11 @@ export const Navbar = () => {
         </Link>
       </div>
       <div className={s.authNav}>
-        <Button text='Log in' type='secondary' popoverText='this logs you in' />
+        <Button
+          text='Log in'
+          type='secondary'
+          popoverText='Log in to your account'
+        />
         <Button text='Sign up' />
       </div>
     </nav>

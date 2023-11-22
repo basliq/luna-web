@@ -55,6 +55,15 @@
     var(--theme-neutral-900) 5%,
     transparent
   );
+
+  // popover
+  --opacity-popover: 90%;
+  --color-popover-bg: color-mix(
+    in hsl,
+    var(--theme-neutral-900) var(--opacity-popover),
+    transparent
+  );
+  --color-text-popover: var(--theme-neutral-100);
 }
 
 :root,

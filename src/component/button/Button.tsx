@@ -6,6 +6,7 @@ import {
   ButtonTypes,
 } from '@/component/button/BaseButton.tsx'
 import Icon, {Icons} from '@/icon/Icon.tsx'
+import {RelativePositionCenter} from '@/type/relative-position.ts'
 
 type Props = {
   size?: ButtonSizes
@@ -18,6 +19,7 @@ type Props = {
   endIcon?: Icons
   justifyItems?: ButtonJustifyValues
   popoverText?: string
+  popoverPosition?: RelativePositionCenter
 }
 
 export const Button = (props: Props) => {

@@ -1,6 +1,6 @@
 'use client'
 
-import {RelativePositionType} from '@/type/relative-position'
+import {RelativePosition} from '@/type/relative-position'
 import s from './dropdown.module.scss'
 import {useState, useEffect, useRef} from 'react'
 
@@ -13,6 +13,8 @@ import {useState, useEffect, useRef} from 'react'
 // * keyboard:
 // handle closing menu with Esc key
 // add keyboard support
+// * timing
+// add delay and close after an interval option
 
 type DropdownParentType =
   | null
@@ -21,8 +23,8 @@ type DropdownParentType =
 type DropdownProps = {
   target: React.ReactNode
   children: React.ReactNode
-  menuType?: 'dropdown' | 'flyout' | 'context'
-  position?: RelativePositionType
+  menuType?: 'dropdown' | 'flyout' | 'context' | 'popover'
+  position?: RelativePosition
   initialState?: 'open' | 'close'
   openOn?: 'click' | 'hover'
   dropdownParentStateFunction?: DropdownParentType
@@ -78,7 +80,7 @@ export const Dropdown = ({
     }
   }, [])
 
-  const getPosition = (): RelativePositionType => {
+  const getPosition = (): RelativePosition => {
     // TODO - add automatic position change
     return position
   }

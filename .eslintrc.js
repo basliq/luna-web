@@ -17,6 +17,9 @@ module.exports = {
         'next/core-web-vitals',
         'prettier',
       ],
+      rules: {
+        'linebreak-style': 0,
+      },
     },
   ],
 }

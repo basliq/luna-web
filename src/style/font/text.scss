@@ -39,6 +39,14 @@ p {
   font-weight: var(--font-weight-regular);
 }
 
+.p-small {
+  font-size: var(--font-size-4);
+}
+
+.p-smaller {
+  font-size: var(--font-size-3);
+}
+
 .paragraph {
   padding-block-start: var(--font-size-6);
   line-height: var(--line-height-5);

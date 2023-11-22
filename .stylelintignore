@@ -1,1 +1,22 @@
+# directories
+.next
+.husky
 coverage
+node_modules
+
+# ts files
+**/*.js
+**/*.ts
+**/*.tsx
+
+# global extensions
+**/*.md
+**/*.webp
+**/.gitkeep
+
+# other ignore files
+.prettierignore
+.stylelintignore
+.eslintignore
+.gitignore
+.gitattributes

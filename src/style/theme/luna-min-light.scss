@@ -1,0 +1,82 @@
+// This is the default theme so we also put the variables in the
+// :root to guarantee that our application is going to display
+// properly if something goes wrong.
+:root,
+[data-theme='luna-min-light'] {
+  // general color
+  --color-bg: var(--theme-neutral-50);
+  --color-on-bg: var(--theme-neutral-100);
+
+  // text color
+  --color-text: var(--theme-neutral-800);
+  --color-text-muted: var(--theme-neutral-500);
+  --color-highlight-background: var(--theme-primary-600);
+  --color-highlight-text: var(--theme-neutral-50);
+  --color-underline: var(--theme-primary-600);
+  --color-brand-text: var(--theme-primary-600);
+
+  // selection color
+  --color-selection-text: var(--theme-primary-900);
+  --color-selection-bg: var(--theme-primary-200);
+
+  // scrollbar color
+  --color-scrollbar-thumb-hover: var(--theme-neutral-600);
+  --color-scrollbar-thumb: var(--theme-neutral-500);
+  --color-scrollbar-track: var(--theme-neutral-200);
+
+  // list color
+  --color-bullet-point: var(--theme-primary-600);
+
+  // button color
+  --color-btn-overlay: hsl(0deg 0% 0%);
+  --color-btn-primary-bg: var(--theme-primary-500);
+  --color-btn-primary-text: var(--theme-primary-50);
+  --color-btn-secondary-bg: var(--theme-primary-100);
+  --color-btn-secondary-text: var(--theme-primary-900);
+  --color-btn-tertiary-bg: transparent;
+  --color-btn-tertiary-text: var(--color-text);
+  --color-btn-danger-bg: var(--theme-danger-100);
+  --color-btn-danger-text: var(--theme-danger-900);
+  --color-btn-disabled-bg: var(--theme-neutral-300);
+  --color-btn-disabled-text: var(--theme-neutral-500);
+
+  // border color
+  --color-border-divider: var(--theme-neutral-200);
+  --color-focus-outline: var(--theme-primary-300);
+
+  // shadow color
+  --color-shadow-close: color-mix(
+    in hsl,
+    var(--theme-neutral-900) 10%,
+    transparent
+  );
+  --color-shadow-distant: color-mix(
+    in hsl,
+    var(--theme-neutral-900) 5%,
+    transparent
+  );
+
+  // popover
+  --opacity-popover: 90%;
+  --color-popover-bg: color-mix(
+    in hsl,
+    var(--theme-neutral-900) var(--opacity-popover),
+    transparent
+  );
+  --color-text-popover: var(--theme-neutral-100);
+}
+
+:root,
+:root[data-theme='luna-min-light'] {
+  --theme-primary-50: var(--raw-color-violet-50);
+  --theme-primary-100: var(--raw-color-violet-100);
+  --theme-primary-200: var(--raw-color-violet-200);
+  --theme-primary-300: var(--raw-color-violet-300);
+  --theme-primary-400: var(--raw-color-violet-400);
+  --theme-primary-500: var(--raw-color-violet-500);
+  --theme-primary-600: var(--raw-color-violet-600);
+  --theme-primary-700: var(--raw-color-violet-700);
+  --theme-primary-800: var(--raw-color-violet-800);
+  --theme-primary-900: var(--raw-color-violet-900);
+  --theme-primary-950: var(--raw-color-violet-950);
+}

@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  overflow-x: clip;
+  min-block-size: 100vh;
+  transition: all var(--transition-long) ease-in;
+  position: relative;
+}

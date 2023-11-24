@@ -1,0 +1,22 @@
+# directories
+.next
+.husky
+coverage
+node_modules
+
+# global extensions
+**/*.md
+**/*.webp
+**/.gitkeep
+
+# image files
+**/*.svg
+**/*.png
+src/app/favicon.ico
+
+# other ignore files
+.prettierignore
+.stylelintignore
+.eslintignore
+.gitignore
+.gitattributes

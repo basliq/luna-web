@@ -1,0 +1,11 @@
+.section {
+  --content-max-inline-size: 120rem;
+
+  padding-block: var(--size-8);
+
+  .content {
+    max-inline-size: var(--content-max-inline-size);
+    margin-inline: auto;
+    padding: var(--size-8);
+  }
+}

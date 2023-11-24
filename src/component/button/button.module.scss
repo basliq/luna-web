@@ -1,0 +1,153 @@
+.button.primary,
+.button.secondary,
+.button.danger {
+  --blending-mode: overlay;
+  --blending-opacity: 0.2;
+  --blending-active-opacity: 0.4;
+}
+
+.button.tertiary {
+  --blending-mode: darken;
+  --blending-opacity: 0.05;
+  --blending-active-opacity: 0.1;
+}
+
+.button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: var(--radius-very-small);
+  cursor: pointer;
+  overflow: clip;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-3);
+  font-family: inherit;
+  transition: var(--transition-very-short);
+
+  p,
+  svg {
+    position: relative;
+    z-index: 5;
+  }
+
+  p {
+    white-space: nowrap;
+    font-weight: var(--font-weight-regular);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    opacity: 0;
+    background-color: var(--color-btn-overlay);
+    transition: opacity var(--transition-short) ease-in;
+    mix-blend-mode: var(--blending-mode);
+  }
+
+  &:active {
+    transition: var(--transition-very-short);
+    transform: translateY(2px);
+  }
+
+  &:focus-visible {
+    outline: var(--color-focus-outline) solid var(--border-stroke-medium);
+  }
+
+  &:hover::before,
+  &:focus-visible::before {
+    opacity: var(--blending-opacity);
+  }
+
+  &:active::before {
+    opacity: var(--blending-active-opacity);
+  }
+}
+
+.primary {
+  background-color: var(--color-btn-primary-bg);
+  color: var(--color-btn-primary-text);
+}
+
+.secondary {
+  background-color: var(--color-btn-secondary-bg);
+  color: var(--color-btn-secondary-text);
+}
+
+.tertiary {
+  background-color: var(--color-btn-tertiary-bg);
+  color: var(--color-btn-tertiary-text);
+}
+
+.danger {
+  background-color: var(--color-btn-danger-bg);
+  color: var(--color-btn-danger-text);
+}
+
+.button:disabled {
+  background-color: var(--color-btn-disabled-bg);
+  color: var(--color-btn-disabled-text);
+  cursor: not-allowed;
+}
+
+.pending {
+  cursor: progress;
+}
+
+.start {
+  justify-content: start;
+}
+
+.center {
+  justify-content: center;
+}
+
+.end {
+  justify-content: end;
+}
+
+.space-start {
+  p {
+    margin-inline-start: auto;
+  }
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-end {
+  p {
+    margin-block-end: auto;
+  }
+}
+
+.small {
+  block-size: var(--size-6);
+  padding: var(--size-3) var(--size-4);
+
+  & p {
+    font-size: var(--font-size-4);
+  }
+}
+
+.medium {
+  block-size: var(--size-7);
+  padding: var(--size-4) var(--size-5);
+
+  & p {
+    font-size: var(--font-size-5);
+  }
+}
+
+.large {
+  block-size: var(--size-8);
+  padding: var(--size-5) var(--size-6);
+
+  & p {
+    font-size: var(--font-size-6);
+  }
+}

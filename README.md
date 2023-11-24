@@ -1,7 +1,10 @@
 ![image](./public/luna-github-social-banner-readme-compressed-v2.webp)
 
 # Luna Web
-This repository holds the codebase for Luna project's frontend web application. You can check the documentation for this project at [luna-documentation](https://github.com/basliq/luna-documentation).
+This repository holds the codebase for Luna project's frontend web application.
+
+## ⚠ This Project Is Archived
+Choosing NextJS wasn't the best decision.
 
 ## Getting Started
 This project is built using [Nextjs 13](https://nextjs.org/), a powerful react framework. 

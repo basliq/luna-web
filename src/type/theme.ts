@@ -1,1 +1,3 @@
-export type ApplicationThemes = 'luna-min-light'
+export const AppThemes = ['luna-min-light'] as const
+
+export type AppThemes = (typeof AppThemes)[number]

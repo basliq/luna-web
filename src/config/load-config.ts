@@ -1,4 +1,7 @@
+'use client'
+
+import {loadAppSettings} from '@/config/app-settings-loader/load-app-settings.ts'
+
 export const loadConfig = () => {
-  // TODO
-  // retrieve data from local storage or other places
+  void loadAppSettings()
 }
